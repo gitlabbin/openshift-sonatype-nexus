@@ -39,14 +39,14 @@ oc new-app nexus3
 ### Deploy Specific Version
 In order to specify the Nexus version to be deployed use ```NEXUS_VERSION``` parameter:
 ```
-oc new-app nexus3 -p NEXUS_VERSION=3.5.2
+oc new-app nexus3 -p NEXUS_VERSION=3.16.2
 ```
 
 The last version tested that has worked with the post-deployment configuration script is ***3.16.2***.
 
 ## Deploy Sonatype Nexus IQ Server
 
-If you'd like to also deploy Sonatype Nexus IQ Server to handle policies/firewalling/etc then jump into the ***iq-server*** directory and check out the instructions and objects there.
+If you'd like to also deploy Sonatype Nexus IQ Server to handle policies/firewalling/etc then jump into the ***openshift-sonatype-nexus-iq*** repo and check out the instructions and objects there.
 
 # Nexus Repository Configuration
 
@@ -70,6 +70,7 @@ The whole point of Nexus Repo Manager is to centrally manage components and repo
   - **Protocol**: LDAPS
   - **Hostname**: idm.example.com
   - **Port**: 636
+  - **Use the Nexus truststore:** Check the box, click ***View Certificate***, and then click ***Add certificate to truststore***
   - **Search Base**: dc=example,dc=com
   - **Authentication Method**: Simple Authentication
   - **Username or DN**: CN=Directory Manager
